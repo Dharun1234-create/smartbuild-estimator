@@ -739,9 +739,18 @@ function initAuthForms() {
   const socialGoogle = document.getElementById('btn-login-google');
   const socialApple = document.getElementById('btn-login-apple');
   if (socialGoogle) {
-    socialGoogle.addEventListener('click', () => {
-      showToast('Google login is not enabled. Please use Email/Password.');
-    });
+  socialGoogle.addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider)
+        .then((result) => {
+            showToast('Google Login Successful!');
+            window.location.hash = '#/dashboard';
+        })
+        .catch((error) => {
+            showToast(error.message);
+        });
+});
   }
   if (socialApple) {
     socialApple.addEventListener('click', () => {
