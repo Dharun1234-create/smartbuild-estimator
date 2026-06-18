@@ -17,7 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletter();
   initAuth(); // Initialize auth system
 });
+window.addEventListener('hashchange', () => {
+    const user = auth?.currentUser;
 
+    if (!user &&
+        window.location.hash !== '#/login' &&
+        window.location.hash !== '#/signup') {
+        window.location.hash = '#/login';
+    }
+});
 // ==========================================
 // 0. Firebase Initialization & Configuration
 // ==========================================
@@ -747,7 +755,7 @@ function initLogoutButtons() {
     e.preventDefault();
     auth.signOut().then(() => {
       showToast('Logged out successfully.');
-      window.location.hash = '#/';
+      window.location.hash = '#/login';
     }).catch(err => {
       showToast('Error signing out: ' + err.message);
     });
