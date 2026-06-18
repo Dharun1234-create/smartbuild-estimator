@@ -577,21 +577,22 @@ function initAuth() {
     const hash = window.location.hash || '#/';
     const routePath = hash.replace(/^#/, '');
     
-    if (routePath === '/dashboard') {
-      if (!user || !user.emailVerified) {
-        window.location.hash = '#/login';
-        showToast('Please log in and verify your email to access the dashboard.');
-      } else {
-        runRouter();
-      }
-    } else if (user && user.emailVerified && (routePath === '/login' || routePath === '/signup' || routePath === '/forgot-password')) {
-      window.location.hash = '#/dashboard';
-    } else {
-      runRouter();
-    }
-  });
+   if (routePath === '/dashboard') {
+  if (!user || !user.emailVerified) {
+    window.location.hash = '#/login';
+    showToast('Please log in and verify your email to access the dashboard.');
+  } else {
+    runRouter();
+  }
+} else if (!user) {
+  window.location.hash = '#/login';
+} else if (user && user.emailVerified && (routePath === '/login' || routePath === '/signup' || routePath === '/forgot-password')) {
+  window.location.hash = '#/dashboard';
+} else {
+  runRouter();
 }
-
+});
+}
 function initPasswordToggles() {
   const togglePass = (btnId, inputId) => {
     const btn = document.getElementById(btnId);
