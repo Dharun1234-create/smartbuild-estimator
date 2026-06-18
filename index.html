@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBuild Estimator | Home Construction Budget Planning & Builder Platform</title>
+  <meta name="description" content="Plan your home construction budget with confidence. Get instant location-aware estimates and connect with verified builders for quotes.">
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header id="site-header">
+    <div class="container nav-container">
+      <a href="#/" class="logo" id="nav-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>SmartBuild <span class="logo-orange">Estimator</span></span>
+      </a>
+      
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#/" class="nav-link active" data-page="home">Home</a></li>
+          <li><a href="#/estimator" class="nav-link" data-page="estimator">Budget Estimator</a></li>
+          <li><a href="#/quotes" class="nav-link" data-page="quotes">Request Quotes</a></li>
+          <li><a href="#/about" class="nav-link" data-page="about">About</a></li>
+          <li><a href="#/contact" class="nav-link" data-page="contact">Contact</a></li>
+          <li><a href="#/dashboard" class="nav-link" data-page="dashboard" id="nav-dashboard-link" style="display: none;">Dashboard</a></li>
+          <li id="nav-login-mobile-li"><a href="#/login" class="nav-link" data-page="login" id="nav-login-mobile-btn">Login</a></li>
+          <li id="nav-logout-mobile-li" style="display: none;"><a href="#" class="nav-link" id="nav-logout-mobile-btn">Logout</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#/login" class="btn btn-outline btn-sm" id="nav-login-btn">Login</a>
+        <button class="btn btn-outline btn-sm" id="nav-logout-btn" style="display: none;">Logout</button>
+        <a href="#/estimator" class="btn btn-primary btn-sm" id="header-cta">Estimate Now</a>
+        <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Content Area (SPA Router Targets) -->
+  <main id="app-main">
+
+    <!-- 1. HOME PAGE -->
+    <section id="page-home" class="page-section">
+      <!-- Hero Section -->
+      <div class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="badge badge-blue">
+              <i class="fa-solid fa-bolt"></i> Smart Planning Platform
+            </span>
+            <h1 class="hero-title">
+              Plan Your Home Construction <span>Budget with Confidence</span>
+            </h1>
+            <p class="hero-description">
+              Calculate construction costs instantly based on your plot size, construction area, and layout. Connect directly with verified builder networks for custom quotations.
+            </p>
+            <div class="hero-buttons">
+              <a href="#/estimator" class="btn btn-primary" id="hero-btn-estimate">
+                <i class="fa-solid fa-calculator"></i> Estimate Budget
+              </a>
+              <a href="#/quotes" class="btn btn-outline" id="hero-btn-quotes">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Request Builder Quotes
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <h4>15k+</h4>
+                <p>Budgets Calculated</p>
+              </div>
+              <div class="stat-item">
+                <h4>320+</h4>
+                <p>Verified Builders</p>
+              </div>
+              <div class="stat-item">
+                <h4>98%</h4>
+                <p>Accuracy Rate</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Mockup/Visual -->
+          <div class="hero-visual">
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <div class="mockup-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-badge">Estimation Dashboard</div>
+              </div>
+              <div class="mockup-stats-grid">
+                <div class="mockup-stat-box">
+                  <div class="mockup-stat-label">Estimated Budget</div>
+                  <div class="mockup-stat-val" id="hero-dynamic-cost">₹22.0L - ₹28.0L</div>
+                </div>
+                <div class="mockup-stat-box">
+                  <div class="mockup-stat-label">Selected Specifications</div>
+                  <div class="mockup-stat-val">Standard Quality</div>
+                </div>
+              </div>
+              <div class="mockup-chart">
+                <div class="chart-bar-wrapper">
+                  <div class="chart-bar" style="height: 55%;"></div>
+                  <span class="chart-bar-label">Basic</span>
+                </div>
+                <div class="chart-bar-wrapper">
+                  <div class="chart-bar accent" style="height: 75%;"></div>
+                  <span class="chart-bar-label">Standard</span>
+                </div>
+                <div class="chart-bar-wrapper">
+                  <div class="chart-bar secondary" style="height: 95%;"></div>
+                  <span class="chart-bar-label">Premium</span>
+                </div>
+              </div>
+              <div class="mockup-bottom">
+                <div class="mockup-user">
+                  <div class="mockup-avatar">TN</div>
+                  <div class="mockup-username">Chennai Project</div>
+                </div>
+                <div class="mockup-stat-label"><i class="fa-solid fa-check-double text-success"></i> Real-time Rates</div>
+              </div>
+            </div>
+
+            <!-- Floating visual tags -->
+            <div class="floating-badge floating-badge-1">
+              <div class="floating-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+              <div class="floating-text">
+                <p>Default Area</p>
+                <h5>1,500 sq.ft</h5>
+              </div>
+            </div>
+            <div class="floating-badge floating-badge-2">
+              <div class="floating-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="floating-text">
+                <p>Local Contractors</p>
+                <h5>85 Verified</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Section -->
+      <div class="section section-bg" id="features">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="badge">Platform Highlights</span>
+            <h2>Powerful Features for Homeowners</h2>
+            <p>SmartBuild combines structural calculations with hyper-local materials market indexes to give you reliable startup project planning tools.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <h3>Location-Aware Algorithms</h3>
+              <p>Estimates are calculated using regional material indexes and labor costs specific to your state and district.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <h3>Specification Adjustments</h3>
+              <p>Compare costs instantly between Basic, Standard, and Premium structural grade finishes, materials, and designs.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-handshake-angle"></i>
+              </div>
+              <h3>Direct Builder Matching</h3>
+              <p>Connect with local, pre-verified contractors who can build matching schedules and provide final quotations.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <h3>Structural Cost Breakdown</h3>
+              <p>Analyze how your funds are allocated between structural materials, finishing works, civil labor, and design.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits Section -->
+      <div class="section" id="benefits">
+        <div class="container benefits-grid">
+          <div class="benefits-visual">
+            <h3>Why Use SmartBuild?</h3>
+            <ul class="benefits-visual-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Save Up to 15%:</strong> Optimize design specifications and avoid material wastage.</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Zero Hidden Fees:</strong> Free calculations and transparent bidding systems.</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Vetted Builders:</strong> Only licensed, peer-reviewed builders with verified portfolios.</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Complete Planning:</strong> Essential foundation templates for bank loan applications.</li>
+            </ul>
+          </div>
+          <div class="benefits-content">
+            <span class="badge badge-blue">Startup Advantages</span>
+            <h2>Eliminating Friction in Residential Construction</h2>
+            <p>For most homeowners, construction is the single largest financial decision of their lives, yet the industry remains opaque. SmartBuild Estimator brings predictability and transparency to the process.</p>
+            <div class="benefits-list" style="margin-top: 2rem;">
+              <div class="benefit-item">
+                <div class="benefit-check"><i class="fa-solid fa-check"></i></div>
+                <div class="benefit-text">
+                  <h4>For Homeowners</h4>
+                  <p>Get a realistic budget benchmark before visiting architects or builders to protect against inflated quotes.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-check"><i class="fa-solid fa-check"></i></div>
+                <div class="benefit-text">
+                  <h4>For Builders & Contractors</h4>
+                  <p>Receive qualified inquiries with specific locations, layout areas, and quality specifications, reducing sales overhead.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How It Works Section -->
+      <div class="section section-bg" id="how-it-works">
+        <div class="container">
+          <div class="section-header text-center">
+            <span class="badge">Simple Process</span>
+            <h2>How It Works</h2>
+            <p>From estimate to building, our portal guides you step-by-step.</p>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h3>Define Specifications</h3>
+              <p>Enter your location details, target plot size, construction area, and floor preferences.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h3>Generate Budget</h3>
+              <p>Compare costs across basic, standard, and premium tiers calculated instantly.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h3>Request Quotations</h3>
+              <p>Submit your parameters to matching verified builders in your district.</p>
+            </div>
+            <div class="step-card">
+              <div class="step-number">4</div>
+              <h3>Review and Build</h3>
+              <p>Compare verified builder quotations and choose the ideal contractor partner.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 2. BUDGET ESTIMATOR PAGE -->
+    <section id="page-estimator" class="page-section hidden">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge"><i class="fa-solid fa-calculator"></i> Cost Calculator</span>
+          <h2>Construction Budget Estimator</h2>
+          <p>Get an instant, data-driven cost estimation for your residential building project.</p>
+        </div>
+
+        <div class="estimator-layout">
+          <!-- Input Form Panel -->
+          <div class="form-card">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-sliders text-orange" style="color: var(--accent); margin-right: 0.5rem;"></i> Project Details</h3>
+            <form id="estimator-form">
+              <div class="form-grid">
+                <!-- State Selector -->
+                <div class="form-group">
+                  <label class="form-label" for="est-state">State *</label>
+                  <select class="form-control" id="est-state" required>
+                    <option value="Tamil Nadu" selected>Tamil Nadu</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                  </select>
+                </div>
+
+                <!-- District Input -->
+                <div class="form-group">
+                  <label class="form-label" for="est-district">District *</label>
+                  <input type="text" class="form-control" id="est-district" placeholder="e.g., Chennai" value="Chennai" required>
+                </div>
+
+                <!-- Plot Size -->
+                <div class="form-group">
+                  <label class="form-label" for="est-plot-size">Plot Size (sq.ft) *</label>
+                  <input type="number" class="form-control" id="est-plot-size" value="1200" min="200" max="50000" required>
+                </div>
+
+                <!-- Construction Area -->
+                <div class="form-group">
+                  <label class="form-label" for="est-construction-area">Construction Area (sq.ft) *</label>
+                  <input type="number" class="form-control" id="est-construction-area" value="1500" min="200" max="100000" required>
+                </div>
+
+                <!-- Floors -->
+                <div class="form-group form-group-full">
+                  <label class="form-label" for="est-floors">Number of Floors *</label>
+                  <select class="form-control" id="est-floors" required>
+                    <option value="1">Ground Floor Only (1 Floor)</option>
+                    <option value="2" selected>Ground + 1 Floor (2 Floors)</option>
+                    <option value="3">Ground + 2 Floors (3 Floors)</option>
+                    <option value="4">Ground + 3 Floors (4 Floors)</option>
+                  </select>
+                </div>
+
+                <!-- Construction Type Cards -->
+                <div class="form-group form-group-full">
+                  <label class="form-label">Construction Quality / Material Type *</label>
+                  <div class="spec-cards-container">
+                    
+                    <!-- Basic Card -->
+                    <label class="spec-selector-card" id="card-basic">
+                      <input type="radio" name="construction-type" value="Basic" id="radio-basic">
+                      <h4>Basic</h4>
+                      <div class="price-tag">₹1,200/sq.ft</div>
+                      <ul>
+                        <li><i class="fa-solid fa-check"></i> Standard Bricks & Sand</li>
+                        <li><i class="fa-solid fa-check"></i> Local Cement & Steel</li>
+                        <li><i class="fa-solid fa-check"></i> Ceramic Tiling</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Plumbing Fixtures</li>
+                      </ul>
+                    </label>
+
+                    <!-- Standard Card (Default) -->
+                    <label class="spec-selector-card active" id="card-standard">
+                      <input type="radio" name="construction-type" value="Standard" id="radio-standard" checked>
+                      <h4>Standard</h4>
+                      <div class="price-tag">₹1,466/sq.ft</div>
+                      <ul>
+                        <li><i class="fa-solid fa-check"></i> First-class Wirecut Bricks</li>
+                        <li><i class="fa-solid fa-check"></i> Branded Cement & FE550 Steel</li>
+                        <li><i class="fa-solid fa-check"></i> Vitrified Tile Flooring</li>
+                        <li><i class="fa-solid fa-check"></i> Branded CP & Sanitary Ware</li>
+                      </ul>
+                    </label>
+
+                    <!-- Premium Card -->
+                    <label class="spec-selector-card" id="card-premium">
+                      <input type="radio" name="construction-type" value="Premium" id="radio-premium">
+                      <h4>Premium</h4>
+                      <div class="price-tag">₹1,866/sq.ft</div>
+                      <ul>
+                        <li><i class="fa-solid fa-check"></i> AAC Blocks / Wirecut Bricks</li>
+                        <li><i class="fa-solid fa-check"></i> Premium Cement & Steel</li>
+                        <li><i class="fa-solid fa-check"></i> Granite / Italian Marble</li>
+                        <li><i class="fa-solid fa-check"></i> Premium Concealed Fittings</li>
+                      </ul>
+                    </label>
+
+                  </div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="form-group-full" style="margin-top: 1rem;">
+                  <button type="submit" class="btn btn-primary btn-block" id="btn-calculate-estimate">
+                    <i class="fa-solid fa-calculator"></i> Estimate My Budget
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Cost Output Results Display -->
+          <div class="results-panel" id="estimator-results-box">
+            <h3><i class="fa-solid fa-circle-nodes"></i> Estimate Summary</h3>
+            <p class="results-intro">Based on your input of <strong id="res-disp-area">1,500</strong> sq.ft construction area in <strong id="res-disp-loc">Chennai, Tamil Nadu</strong>:</p>
+
+            <div class="results-tiers-container">
+              <!-- Basic result -->
+              <div class="result-card-tier" id="res-tier-basic">
+                <div class="tier-info">
+                  <h4>Basic Quality</h4>
+                  <p>Local contractors & standard fittings</p>
+                </div>
+                <div class="tier-price">
+                  <h3 id="res-val-basic">₹18.0L – ₹22.0L</h3>
+                  <p>Estimated Range</p>
+                </div>
+              </div>
+
+              <!-- Standard result (Selected highlight) -->
+              <div class="result-card-tier highlight" id="res-tier-standard">
+                <div class="tier-info">
+                  <h4>Standard Quality <span class="badge badge-blue btn-sm" style="padding: 0.15rem 0.5rem; font-size:0.65rem; margin-bottom:0; margin-left:0.25rem;">Selected</span></h4>
+                  <p>Mid-range branded fittings & good finish</p>
+                </div>
+                <div class="tier-price">
+                  <h3 id="res-val-standard" style="color: var(--accent);">₹22.0L – ₹28.0L</h3>
+                  <p style="color: var(--text-light);">Estimated Range</p>
+                </div>
+              </div>
+
+              <!-- Premium result -->
+              <div class="result-card-tier" id="res-tier-premium">
+                <div class="tier-info">
+                  <h4>Premium Quality</h4>
+                  <p>Top-tier materials & luxury architectural designs</p>
+                </div>
+                <div class="tier-price">
+                  <h3 id="res-val-premium">₹28.0L – ₹40.0L</h3>
+                  <p>Estimated Range</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cost Breakdown progress scales -->
+            <div class="breakdown-section">
+              <h4 class="breakdown-title">Estimated Cost Breakdown (Selected Quality)</h4>
+              <div class="breakdown-row">
+                <!-- Materials -->
+                <div class="breakdown-item">
+                  <div class="breakdown-label-row">
+                    <span class="breakdown-label"><i class="fa-solid fa-cubes text-muted"></i> Materials (50%)</span>
+                    <span class="breakdown-val" id="breakdown-val-materials">₹11.0L - ₹14.0L</span>
+                  </div>
+                  <div class="breakdown-progress">
+                    <div class="breakdown-progress-fill materials" style="width: 50%;"></div>
+                  </div>
+                </div>
+
+                <!-- Labor -->
+                <div class="breakdown-item">
+                  <div class="breakdown-label-row">
+                    <span class="breakdown-label"><i class="fa-solid fa-helmet-safety text-muted"></i> Civil Labor (25%)</span>
+                    <span class="breakdown-val" id="breakdown-val-labor">₹5.5L - ₹7.0L</span>
+                  </div>
+                  <div class="breakdown-progress">
+                    <div class="breakdown-progress-fill labor" style="width: 25%;"></div>
+                  </div>
+                </div>
+
+                <!-- Architect -->
+                <div class="breakdown-item">
+                  <div class="breakdown-label-row">
+                    <span class="breakdown-label"><i class="fa-solid fa-pen-ruler text-muted"></i> Architect & Design (12%)</span>
+                    <span class="breakdown-val" id="breakdown-val-design">₹2.6L - ₹3.4L</span>
+                  </div>
+                  <div class="breakdown-progress">
+                    <div class="breakdown-progress-fill architect" style="width: 12%;"></div>
+                  </div>
+                </div>
+
+                <!-- Approvals -->
+                <div class="breakdown-item">
+                  <div class="breakdown-label-row">
+                    <span class="breakdown-label"><i class="fa-solid fa-file-contract text-muted"></i> Approvals & Utilities (13%)</span>
+                    <span class="breakdown-val" id="breakdown-val-approvals">₹2.9L - ₹3.6L</span>
+                  </div>
+                  <div class="breakdown-progress">
+                    <div class="breakdown-progress-fill approvals" style="width: 13%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Disclaimer box -->
+            <div class="disclaimer-box">
+              <i class="fa-solid fa-circle-info text-orange"></i>
+              <span>This estimate is for planning purposes only and is not a final quotation.</span>
+            </div>
+
+            <div class="results-actions" style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <button class="btn btn-primary btn-block" id="btn-results-to-quotes">
+                <i class="fa-solid fa-paper-plane"></i> Get Free Builder Quotes for This Budget
+              </button>
+              <button class="btn btn-outline btn-block" id="btn-save-estimate">
+                <i class="fa-solid fa-bookmark"></i> Save Estimate to Dashboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 3. BUILDER QUOTES PAGE -->
+    <section id="page-quotes" class="page-section hidden">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header text-center">
+          <span class="badge"><i class="fa-solid fa-file-invoice-dollar"></i> Quotation Requests</span>
+          <h2>Get Free Builder Quotes</h2>
+          <p>Provide your construction requirements and get competitive quotes from verified local builders in your area.</p>
+        </div>
+
+        <div class="form-card">
+          <h3 style="margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem;"><i class="fa-solid fa-clipboard-list text-orange" style="color: var(--accent); margin-right: 0.5rem;"></i> Request Form</h3>
+          <form id="quotes-form">
+            <div class="form-grid">
+              
+              <!-- Full Name -->
+              <div class="form-group">
+                <label class="form-label" for="quote-name">Full Name *</label>
+                <div style="position: relative;">
+                  <input type="text" class="form-control" id="quote-name" placeholder="Enter your full name" required>
+                </div>
+              </div>
+
+              <!-- Mobile Number -->
+              <div class="form-group">
+                <label class="form-label" for="quote-mobile">Mobile Number *</label>
+                <input type="tel" class="form-control" id="quote-mobile" placeholder="e.g., 9876543210" pattern="[6-9][0-9]{9}" title="Please enter a valid 10-digit Indian mobile number" required>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group">
+                <label class="form-label" for="quote-email">Email Address *</label>
+                <input type="email" class="form-control" id="quote-email" placeholder="name@example.com" required>
+              </div>
+
+              <!-- District -->
+              <div class="form-group">
+                <label class="form-label" for="quote-district">District *</label>
+                <input type="text" class="form-control" id="quote-district" placeholder="Enter project district" required>
+              </div>
+
+              <!-- Project Location -->
+              <div class="form-group form-group-full">
+                <label class="form-label" for="quote-location">Project Location / Site Address *</label>
+                <input type="text" class="form-control" id="quote-location" placeholder="Specific locality, area or address of the plot" required>
+              </div>
+
+              <!-- Target Budget Selection -->
+              <div class="form-group">
+                <label class="form-label" for="quote-budget">Target Budget *</label>
+                <select class="form-control" id="quote-budget" required>
+                  <option value="" disabled selected>Select budget range</option>
+                  <option value="Under ₹20L">Under ₹20 Lakhs</option>
+                  <option value="₹20L – ₹30L">₹20 Lakhs – ₹30 Lakhs</option>
+                  <option value="₹30L – ₹50L">₹30 Lakhs – ₹50 Lakhs</option>
+                  <option value="₹50L+">Above ₹50 Lakhs</option>
+                </select>
+              </div>
+
+              <!-- Plot Size -->
+              <div class="form-group">
+                <label class="form-label" for="quote-plot-size">Plot Size (sq.ft) *</label>
+                <input type="number" class="form-control" id="quote-plot-size" placeholder="e.g., 1200" required>
+              </div>
+
+              <!-- Construction Requirements -->
+              <div class="form-group form-group-full">
+                <label class="form-label" for="quote-requirements">Construction Requirements *</label>
+                <textarea class="form-control" id="quote-requirements" rows="4" placeholder="Briefly describe what you plan to build (e.g., '3 BHK Ground+1 Floor building with Standard materials, structural columns, teak doors, modular kitchen')" required></textarea>
+              </div>
+
+              <!-- Consent Checkbox -->
+              <div class="form-group-full" style="margin: 0.5rem 0;">
+                <label class="checkbox-group">
+                  <input type="checkbox" id="quote-consent" required>
+                  <span>I agree that my details may be shared with verified builders for quotation purposes.</span>
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group-full" style="margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary btn-block" id="btn-submit-quotes">
+                  <i class="fa-solid fa-file-shield"></i> Get Free Builder Quotes
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. CONTACT PAGE -->
+    <section id="page-contact" class="page-section hidden">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge"><i class="fa-solid fa-headset"></i> Connect</span>
+          <h2>Contact SmartBuild Estimator</h2>
+          <p>Have questions about budget estimation or structural calculations? Reach out to us directly.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Information Details Card -->
+          <div class="contact-info-card">
+            <h3>Get in Touch</h3>
+            <p>Our support team and senior civil engineers are ready to assist you in planning your dream home construction budget.</p>
+            
+            <div class="contact-methods">
+              <!-- Phone Contact -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact-method-text">
+                  <h5>Call Support</h5>
+                  <p>+91 88386 94603</p>
+                </div>
+              </div>
+
+              <!-- Email Contact -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact-method-text">
+                  <h5>Send Email</h5>
+                  <p>support@smartbuild.in</p>
+                </div>
+              </div>
+
+              <!-- WhatsApp Contact -->
+              <div class="contact-method-item">
+                <div class="contact-method-icon" style="background-color: rgba(34, 197, 94, 0.08); color: #22c55e;">
+                  <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div class="contact-method-text">
+                  <h5>WhatsApp Chat</h5>
+                  <p>+91 88386 94603</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0;">
+                <i class="fa-solid fa-clock"></i> Response hours: Monday - Saturday (9:00 AM - 6:00 PM)
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Form Panel -->
+          <div class="form-card">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-envelope-open-text text-orange" style="color: var(--accent); margin-right: 0.5rem;"></i> Send a Message</h3>
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Name *</label>
+                <input type="text" class="form-control" id="contact-name" placeholder="Your name" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <input type="email" class="form-control" id="contact-email" placeholder="yourname@gmail.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message *</label>
+                <textarea class="form-control" id="contact-message" rows="5" placeholder="Enter your detailed requirements or message..." required></textarea>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <button type="submit" class="btn btn-primary btn-block" id="btn-send-whatsapp">
+                  <i class="fa-brands fa-whatsapp"></i> Send Details via WhatsApp
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. ABOUT PAGE -->
+    <section id="page-about" class="page-section hidden">
+      <div class="container">
+        <div class="about-grid">
+          
+          <!-- Image Column -->
+          <div class="about-image">
+            <!-- Simulated construction mockup image using CSS shapes / elements since we don't have a real asset, or we can just make it extremely stylish -->
+            <div style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%); width: 100%; height: 450px; border-radius: var(--radius-lg); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-lg); border: 1px solid rgba(255,255,255,0.05);">
+              <div style="position: absolute; width: 150%; height: 150%; background-image: radial-gradient(var(--accent) 1px, transparent 1px); background-size: 24px 24px; opacity: 0.15; transform: rotate(15deg);"></div>
+              <div style="z-index: 2; text-align: center; color: var(--bg-white); padding: 2rem;">
+                <i class="fa-solid fa-compass-drafting" style="font-size: 4rem; color: var(--accent); margin-bottom: 1.5rem;"></i>
+                <h3 style="color: var(--bg-white); font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem;">SmartBuild Estimator</h3>
+                <p style="color: var(--text-light); font-size: 0.95rem; max-width: 300px; margin: 0 auto;">Building transparency into the civil construction industry.</p>
+              </div>
+            </div>
+            
+            <div class="about-image-badge">
+              <h4>100%</h4>
+              <p>Transparent Estimates</p>
+            </div>
+          </div>
+
+          <!-- Description Column -->
+          <div class="about-content">
+            <span class="badge"><i class="fa-solid fa-building"></i> Startup Vision</span>
+            <h2>Bridging the Gap Between Homeowners and Verified Builders</h2>
+            <p>SmartBuild Estimator is a complete home-building planning and builder connection platform. We empower homeowners to model, structure, and optimize their residential construction budgets before starting project builds.</p>
+            <p>By using real-time market data indexes for steel, cement, sand, brick, and civil labor across districts, our platform generates high-fidelity estimates that reflect true local building costs.</p>
+            <p>But we don't stop at calculations. SmartBuild Estimator serves as a matching engine that connects homeowners with local, pre-verified, licensed builder networks, ensuring that their budget is translated into high-quality, physical execution without budget overruns or builder fraud.</p>
+
+            <div class="value-props">
+              <div class="value-prop-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <h4>Planning Tool</h4>
+                  <p>Get data-backed, scalable budget benchmarks.</p>
+                </div>
+              </div>
+              <div class="value-prop-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <h4>Verified Builders</h4>
+                  <p>Strict vetting checks before contractors can bid.</p>
+                </div>
+              </div>
+              <div class="value-prop-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <h4>Anti-Exploitation</h4>
+                  <p>Prevents builders from quoting inflated materials estimates.</p>
+                </div>
+              </div>
+              <div class="value-prop-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <div>
+                  <h4>Investor Ready</h4>
+                  <p>Validates margins and cost parameters for projects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 6. PRIVACY POLICY PAGE -->
+    <section id="page-privacy" class="page-section hidden">
+      <div class="container">
+        <div class="policy-content">
+          <span class="badge"><i class="fa-solid fa-user-shield"></i> Legal</span>
+          <h1>Privacy Policy</h1>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">Last updated: June 16, 2026</p>
+
+          <h2>1. Information We Collect</h2>
+          <p>We collect information you provide directly to us when requesting builder quotes or contacting us, including:</p>
+          <ul>
+            <li>Personal Identifiers: Full Name, Mobile Number, Email Address.</li>
+            <li>Project Details: District, Project Location, Plot Size, Budget preferences, and Construction requirements.</li>
+          </ul>
+
+          <h2>2. How We Use Your Information</h2>
+          <p>We use the collected information for the following specific purposes:</p>
+          <ul>
+            <li>To compute cost calculations and estimate project budgets.</li>
+            <li>To match you with verified builders within your project district (subject to your explicit consent checkbox).</li>
+            <li>To communicate project updates and customer support responses.</li>
+            <li>To maintain portal security and analyze usage metrics.</li>
+          </ul>
+
+          <h2>3. Information Sharing and Disclosure</h2>
+          <p>We only share your personal identifiers and project specifications with verified builders on our network once you explicitly submit the request form and tick the consent checkbox. We do not sell, rent, or trade your personal information to third-party marketing companies.</p>
+
+          <h2>4. Data Security</h2>
+          <p>We implement industry-standard administrative, technical, and physical security measures to safeguard your personal data against unauthorized access, disclosure, alteration, or destruction.</p>
+
+          <h2>5. Contact Us</h2>
+          <p>If you have any questions or feedback regarding this Privacy Policy, you can reach out via our contact channels or email us at <strong>privacy@smartbuild.in</strong>.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 7. TERMS & CONDITIONS PAGE -->
+    <section id="page-terms" class="page-section hidden">
+      <div class="container">
+        <div class="policy-content">
+          <span class="badge"><i class="fa-solid fa-gavel"></i> Agreements</span>
+          <h1>Terms and Conditions</h1>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem;">Last updated: June 16, 2026</p>
+
+          <h2>1. Use of Estimation Tools</h2>
+          <p>The cost estimation figures generated by the SmartBuild Estimator are calculated based on standard market materials and labor indices. These estimates are strictly for planning purposes and do not represent a final, legally binding quotation or construction contract.</p>
+
+          <h2>2. Relationship with Builders</h2>
+          <p>SmartBuild Estimator acts as a platform connecting homeowners with third-party contractors and builders. We do not construct buildings, nor do we employ contractors. While we take measures to verify builders on our network, we are not liable for any structural defects, delays, budget changes, or disputes arising from contracts signed between you and any builder.</p>
+
+          <h2>3. Accuracy of User Information</h2>
+          <p>When requesting quotes or transmitting messages, users must provide accurate and verifiable contact information. Providing fraudulent or spam information is a violation of these Terms.</p>
+
+          <h2>4. Intellectual Property</h2>
+          <p>All logos, code, design structures, and calculation formulas are the exclusive property of SmartBuild Estimator and are protected by applicable intellectual property laws.</p>
+
+          <h2>5. Modifications of Service</h2>
+          <p>We reserve the right to modify, suspend, or terminate the services, estimation parameters, or portals at any time without prior notice.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. LOGIN PAGE -->
+    <section id="page-login" class="page-section hidden">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <svg class="auth-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <h3>Welcome Back</h3>
+            <p>Login to manage your saved estimates</p>
+          </div>
+          
+          <div id="login-msg" class="auth-msg hidden"></div>
+
+          <form id="login-form">
+            <div class="form-group">
+              <label class="form-label" for="login-email">Email Address</label>
+              <input type="email" class="form-control" id="login-email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <label class="form-label" for="login-password">Password</label>
+                <a href="#/forgot-password" class="auth-link">Forgot Password?</a>
+              </div>
+              <div class="password-input-wrapper">
+                <input type="password" class="form-control" id="login-password" placeholder="Enter your password" required>
+                <button type="button" class="toggle-password" id="toggle-login-pass">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-auth" id="btn-login-submit">
+              <span>Log In</span>
+              <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            </button>
+          </form>
+
+          <div class="social-auth-divider">
+            <span>or continue with</span>
+          </div>
+
+          <div class="social-auth-buttons">
+            <button type="button" class="btn btn-outline social-btn" id="btn-login-google">
+              <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" style="width: 1.25rem; height: 1.25rem; margin-right: 0.5rem; display: inline;">
+              <span>Google</span>
+            </button>
+            <button type="button" class="btn btn-outline social-btn" id="btn-login-apple">
+              <img src="https://www.svgrepo.com/show/475636/apple-color.svg" alt="Apple" style="width: 1.25rem; height: 1.25rem; margin-right: 0.5rem; display: inline;">
+              <span>Apple</span>
+            </button>
+          </div>
+          
+          <div class="auth-footer">
+            <p>New to SmartBuild? <a href="#/signup" class="auth-link">Create Account</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. SIGNUP PAGE -->
+    <section id="page-signup" class="page-section hidden">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <svg class="auth-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <h3>Create Account</h3>
+            <p>Join SmartBuild to save your budgets</p>
+          </div>
+          
+          <div id="signup-msg" class="auth-msg hidden"></div>
+
+          <form id="signup-form">
+            <div class="form-group">
+              <label class="form-label" for="signup-name">Full Name</label>
+              <input type="text" class="form-control" id="signup-name" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="signup-email">Email Address</label>
+              <input type="email" class="form-control" id="signup-email" placeholder="name@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="signup-password">Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" class="form-control" id="signup-password" placeholder="Create a password (min 6 characters)" minlength="6" required>
+                <button type="button" class="toggle-password" id="toggle-signup-pass">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="signup-confirm">Confirm Password</label>
+              <div class="password-input-wrapper">
+                <input type="password" class="form-control" id="signup-confirm" placeholder="Confirm your password" minlength="6" required>
+                <button type="button" class="toggle-password" id="toggle-signup-confirm">
+                  <i class="fa-regular fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-auth" id="btn-signup-submit">
+              <span>Create Account</span>
+              <i class="fa-solid fa-user-plus"></i>
+            </button>
+          </form>
+          
+          <div class="auth-footer">
+            <p>Already have an account? <a href="#/login" class="auth-link">Log In</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FORGOT PASSWORD PAGE -->
+    <section id="page-forgot-password" class="page-section hidden">
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <div class="auth-icon-circle">
+              <i class="fa-solid fa-key"></i>
+            </div>
+            <h3>Forgot Password?</h3>
+            <p>Enter your email address to reset your password</p>
+          </div>
+          
+          <div id="forgot-msg" class="auth-msg hidden"></div>
+
+          <form id="forgot-form">
+            <div class="form-group">
+              <label class="form-label" for="forgot-email">Email Address</label>
+              <input type="email" class="form-control" id="forgot-email" placeholder="name@example.com" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-auth" id="btn-forgot-submit">
+              <span>Send Reset Email</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+          
+          <div class="auth-footer">
+            <p>Back to <a href="#/login" class="auth-link">Log In</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. DASHBOARD PAGE -->
+    <section id="page-dashboard" class="page-section hidden">
+      <div class="container" style="max-width: 1000px; padding: 4rem 1.5rem;">
+        <!-- Profile Banner -->
+        <div class="dashboard-banner">
+          <div class="user-profile">
+            <div class="user-avatar" id="dash-avatar">U</div>
+            <div class="user-details">
+              <h2 id="dash-user-name">Loading...</h2>
+              <p id="dash-user-email">email@example.com</p>
+            </div>
+          </div>
+          <button class="btn btn-outline btn-sm" id="btn-dash-logout">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+          </button>
+        </div>
+
+        <!-- Dashboard Content Grid -->
+        <div class="dashboard-grid" style="margin-top: 3rem;">
+          <!-- Left / Welcome Actions -->
+          <div class="dashboard-card welcome-card">
+            <h3>Welcome to your Dashboard</h3>
+            <p>Here you can view your construction budget estimates and request quotations from verified local builder networks.</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;">
+              <a href="#/estimator" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-calculator"></i> New Estimate
+              </a>
+              <a href="#/quotes" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-file-invoice-dollar"></i> Get Quotes
+              </a>
+            </div>
+          </div>
+
+          <!-- Right / Saved Estimates -->
+          <div class="dashboard-card estimates-card">
+            <div class="card-header-row">
+              <h3><i class="fa-solid fa-bookmark text-orange"></i> Saved Estimates</h3>
+              <span class="estimates-count badge badge-blue" id="saved-estimates-count" style="margin-bottom: 0;">0 Saved</span>
+            </div>
+            
+            <div class="estimates-list" id="saved-estimates-list" style="margin-top: 1.5rem;">
+              <div class="empty-state">
+                <i class="fa-solid fa-calculator" style="font-size: 3rem; color: var(--text-light); margin-bottom: 1rem; display: block; text-align: center;"></i>
+                <p style="text-align: center; color: var(--text-muted);">You haven't saved any estimates yet.</p>
+                <div style="text-align: center; margin-top: 1.25rem;">
+                  <a href="#/estimator" class="btn btn-secondary btn-sm">Go to Estimator</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand / Logo -->
+        <div class="footer-brand">
+          <a href="#/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>SmartBuild <span class="logo-orange">Estimator</span></span>
+          </a>
+          <p>"Helping Homeowners Plan Better"</p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-links-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/estimator">Budget Estimator</a></li>
+            <li><a href="#/quotes">Request Quotes</a></li>
+          </ul>
+        </div>
+
+        <!-- Corporate Links -->
+        <div class="footer-links-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#/about">About Us</a></li>
+            <li><a href="#/contact">Contact Us</a></li>
+            <li><a href="#/privacy">Privacy Policy</a></li>
+            <li><a href="#/terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Sign-up -->
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Get weekly updates on local material price indexes and construction trends.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email Address">
+            <button type="submit" class="btn btn-primary btn-sm" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Legal footer row -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 SmartBuild Estimator. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#/privacy">Privacy Policy</a>
+          <a href="#/terms">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 8. SUCCESS MODAL (FOR REQUESTS) -->
+  <div class="modal-backdrop" id="success-modal">
+    <div class="modal-card">
+      <div class="modal-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <h3 id="modal-title">Request Submitted!</h3>
+      <p id="modal-desc">Your details have been successfully recorded. Verified builders in your district will contact you soon.</p>
+      
+      <!-- Submitted details box -->
+      <div class="quote-confirm-details" id="modal-summary-box">
+        <!-- populated dynamically -->
+      </div>
+
+      <button class="btn btn-secondary btn-sm" id="btn-close-modal">Close</button>
+    </div>
+  </div>
+
+  <!-- Toast Toast Alert -->
+  <div class="toast" id="app-toast">
+    <i class="fa-solid fa-circle-check toast-icon"></i>
+    <span id="toast-message">Success!</span>
+  </div>
+
+  <!-- Firebase Compat SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Application Controller Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
