@@ -167,7 +167,7 @@ img {
 .btn-outline {
     background-color: transparent;
     border-color: var(--border);
-    color: white;
+    color: var(--primary);
 }
 
 .btn-outline:hover {
@@ -2039,5 +2039,10 @@ footer {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
+}
+
+#btn-save-estimate {
+    color: white;
+    border-color: white;
 }
 
