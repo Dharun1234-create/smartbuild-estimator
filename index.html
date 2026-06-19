@@ -1077,7 +1077,40 @@
     <i class="fa-solid fa-circle-check toast-icon"></i>
     <span id="toast-message">Success!</span>
   </div>
+<!-- 12. ADMIN PAGE -->
+<section id="page-admin" class="page-section hidden">
+    <div class="container" style="max-width:1200px; padding:4rem 1.5rem;">
 
+        <h1>Admin Dashboard</h1>
+
+        <div class="dashboard-grid" style="margin-top:2rem;">
+
+            <div class="dashboard-card">
+                <h3>Total Users</h3>
+                <h2 id="admin-total-users">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Total Estimates</h3>
+                <h2 id="admin-total-estimates">0</h2>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Total Leads</h3>
+                <h2 id="admin-total-leads">0</h2>
+            </div>
+
+        </div>
+
+        <div class="dashboard-card" style="margin-top:2rem;">
+            <h3>Recent Leads</h3>
+            <div id="admin-leads-list">
+                No leads available.
+            </div>
+        </div>
+
+    </div>
+</section>
   <!-- Firebase Compat SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>

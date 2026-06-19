@@ -65,7 +65,8 @@ const routes = {
   '/login': 'page-login',
   '/signup': 'page-signup',
   '/forgot-password': 'page-forgot-password',
-  '/dashboard': 'page-dashboard'
+  '/dashboard': 'page-dashboard',
+  '/admin': 'page-admin'
 };
 
 let runRouter = () => {};
@@ -76,7 +77,7 @@ function initRouter() {
     const routePath = hash.replace(/^#/, '');
     
     // Protect Dashboard: Only authenticated & verified users can access dashboard
-    if (routePath === '/dashboard') {
+    if (routePath === '/dashboard' || routePath === '/admin') {
       if (isAuthChecked) {
         const user = auth.currentUser;
         if (!user || !user.emailVerified) {
@@ -743,10 +744,15 @@ function initAuthForms() {
     const provider = new firebase.auth.GoogleAuthProvider();
 
     auth.signInWithPopup(provider)
-        .then((result) => {
-            showToast('Google Login Successful!');
-            window.location.hash = '#/dashboard';
-        })
+  .then((result) => {
+    showToast('Google Login Successful!');
+
+    if (result.user.email === 'kumardharun405@gmail.com') {
+        window.location.hash = '#/admin';
+    } else {
+        window.location.hash = '#/dashboard';
+    }
+})
         .catch((error) => {
             showToast(error.message);
         });
