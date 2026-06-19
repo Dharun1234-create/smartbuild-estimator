@@ -1765,22 +1765,24 @@ footer {
 }
 
 .social-auth-buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .social-btn {
-  padding: 0.75rem;
-  font-size: 0.9rem;
-  border-radius: var(--radius-md);
-  border-color: var(--border);
-  background-color: var(--bg-white);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
+    padding: 0.75rem;
+    width: 220px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    border-radius: var(--radius-md);
+    border-color: var(--border);
+    background-color: var(--bg-white);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
 }
 
 .social-btn:hover {
