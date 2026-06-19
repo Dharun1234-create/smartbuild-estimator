@@ -505,7 +505,7 @@ form.reset();
       modal.classList.remove('active');
     }
   });
-}
+
 
 // ==========================================
 // 5. Contact Form & WhatsApp Integration
@@ -524,7 +524,8 @@ function initContactForm() {
     const message = document.getElementById('contact-message').value;
 
     // Format WhatsApp Text
-    const textMsg = `Hello SmartBuild Estimator,
+  
+const textMsg = `Hello SmartBuild Estimator,
 
 Name: ${name}
 
@@ -534,15 +535,15 @@ Message: ${message}
 
 I would like more information regarding construction budget planning and builder consultation.`;
 
-    // Target API Url
-    const whatsappNum = '918838694603'; // India prefix +91
-    const targetUrl = `https://wa.me/${whatsappNum}?text=${encodeURIComponent(textMsg)}`;
+const whatsappNum = '918838694603';
 
-    // Open WhatsApp in a new tab (no iframe, strictly wa.me redirect)
-    window.open(targetUrl, '_blank');
+const targetUrl = `https://wa.me/${whatsappNum}?text=${encodeURIComponent(textMsg)}`;
 
-    showToast('Redirecting to WhatsApp...');
-    form.reset();
+window.open(targetUrl, '_blank');
+
+showToast('Redirecting to WhatsApp...');
+form.reset();
+   
   });
 }
 
