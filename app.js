@@ -65,8 +65,7 @@ const routes = {
   '/login': 'page-login',
   '/signup': 'page-signup',
   '/forgot-password': 'page-forgot-password',
-  '/dashboard': 'page-dashboard',
-  '/admin': 'page-admin'
+  '/dashboard': 'page-dashboard'
 };
 
 let runRouter = () => {};
@@ -77,7 +76,7 @@ function initRouter() {
     const routePath = hash.replace(/^#/, '');
     
     // Protect Dashboard: Only authenticated & verified users can access dashboard
-    if (routePath === '/dashboard' || routePath === '/admin') {
+    if (routePath === '/dashboard') {
       if (isAuthChecked) {
         const user = auth.currentUser;
         if (!user || !user.emailVerified) {
@@ -472,12 +471,26 @@ function initQuotesForm() {
       `;
     }
 
-    // Show Success Modal
-    modal.classList.add('active');
 
-    // Reset Form
-    form.reset();
-  });
+db.collection("leads").add({
+    name: name,
+    mobile: mobile,
+    email: email,
+    district: district,
+    location: location,
+    budget: budget,
+    plotSize: plotSize,
+    requirements: requirements,
+    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    status: "Pending"
+});
+
+// Show Success Modal
+modal.classList.add('active');
+
+// Reset Form
+form.reset();
+  
 
   // Close Modal Handler
   if (closeModalBtn) {
